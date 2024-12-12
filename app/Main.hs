@@ -1,6 +1,9 @@
 module Main (main) where
 
+import GHC.IO.Encoding (setLocaleEncoding, utf8)
 import Distribution.Audit (auditMain)
 
 main :: IO ()
-main = auditMain
+main = do
+    setLocaleEncoding utf8
+    auditMain
